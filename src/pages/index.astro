@@ -20,11 +20,7 @@ const processSteps = [
   { number: '04', icon: '🚢', title: 'SHIPPING & DELIVERY', description: 'Fast and secure international shipping with real-time tracking and updates' },
 ];
 
-const stats = [
-  { value: '85%', label: 'Order executed' },
-  { value: '100%', label: 'Quality Test Adherence' },
-  { value: '90%', label: 'Cargo reached destination ON TIME' },
-];
+
 
 const flipCards = [
   {
@@ -81,74 +77,105 @@ const faqs = [
 
 <BaseLayout title="iodineZ - Import Pharma Chemicals from India">
   <!-- Hero Section -->
-  <section class="pt-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="text-primary font-semibold uppercase tracking-wider mb-4">Export Marketing Services</p>
-          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Your Trusted Partner for Iodine Derivatives from India
-          </h1>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Sourcing, Quality Assurance & Export Management for Pharmaceutical and Industrial Iodine Compounds. Save months of verification time with our expert-led factory visits.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/contact" class="btn-primary">Request a Quote</a>
-            <a href="/products" class="btn-outline">View Products</a>
+  <section class="relative bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+        <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="sm:text-center lg:text-left">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">Your Trusted Partner for</span>
+              <span class="block text-primary">Iodine Derivatives from India</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+              Sourcing, Quality Assurance & Export Management. Save months of verification time with our expert-led factory visits and rigorous quality checks.
+            </p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start gap-4">
+              <div class="rounded-md shadow">
+                <a href="/contact" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark md:py-4 md:text-lg">
+                  Request a Quote
+                </a>
+              </div>
+              <div class="mt-3 sm:mt-0 sm:ml-3">
+                <a href="/products" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-primary/10 hover:bg-primary/20 md:py-4 md:text-lg">
+                  View Products
+                </a>
+              </div>
+            </div>
+            
+            <div class="mt-8 flex items-center gap-4 text-sm text-gray-500 font-medium">
+               <div class="flex items-center gap-1">
+                 <span class="text-green-500 text-xl">✓</span> 50+ MT Exported
+               </div>
+               <div class="flex items-center gap-1">
+                 <span class="text-green-500 text-xl">✓</span> WHO-GMP Partners
+               </div>
+               <div class="flex items-center gap-1">
+                 <span class="text-green-500 text-xl">✓</span> 100% Quality Adherence
+               </div>
+            </div>
           </div>
-        </div>
-        <div class="relative">
-          <img 
-            src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&h=600&fit=crop" 
-            alt="Scientist in laboratory" 
-            class="rounded-xl shadow-2xl w-full"
-          />
-          <div class="absolute -bottom-6 -left-6 bg-primary text-white p-4 rounded-lg shadow-lg">
-            <div class="text-2xl font-bold">50+ MT</div>
-            <div class="text-sm opacity-90">Povidone Iodine Successfully Exported</div>
+        </main>
+      </div>
+    </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-gray-50">
+      <div class="h-56 w-full sm:h-72 md:h-96 lg:w-full lg:h-full grid grid-cols-2 gap-2 p-4">
+          <div class="space-y-2">
+             <img class="h-full w-full object-cover rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=800&fit=crop" alt="Lab testing">
+             <img class="h-64 w-full object-cover rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop" alt="Pharma manufacturing">
           </div>
-        </div>
+          <div class="space-y-2 pt-8">
+             <img class="h-64 w-full object-cover rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1624969862293-b749659ccc4e?w=600&h=400&fit=crop" alt="Shipping container">
+             <img class="h-full w-full object-cover rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=800&fit=crop" alt="Chemical analysis">
+          </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section with Images -->
+  <!-- Counter Strategy / Value Proposition -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">Why Buyers Choose Us Over Direct Sourcing</h2>
+        <p class="mt-4 text-xl text-gray-600">We offer what individual manufacturers can't.</p>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Image Grid -->
-        <div class="space-y-4">
-          <img 
-            src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=250&fit=crop" 
-            alt="Blue chemical barrels" 
-            class="rounded-lg shadow-md w-full h-40 object-cover"
-          />
-          <img 
-            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop" 
-            alt="Manufacturing facility" 
-            class="rounded-lg shadow-md w-full h-40 object-cover"
-          />
-          <div class="bg-white p-6 rounded-lg shadow-md text-center">
-            <div class="stat-number">{stats[0].value}</div>
-            <div class="text-gray-600">{stats[0].label}</div>
-          </div>
+        <!-- Strategy 1 -->
+        <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow border-t-4 border-primary">
+          <div class="text-4xl mb-4">⚖️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Neutral Comparison</h3>
+          <p class="text-gray-600">
+            Manufacturers only sell what they make. We provide a neutral comparison of multiple WHO-GMP suppliers to find the best fit for your specs and budget.
+          </p>
         </div>
-        
-        <!-- Certificate / Center -->
-        <div class="flex flex-col items-center justify-center text-center bg-white rounded-lg shadow-md p-8">
-          <div class="text-6xl mb-4">📜</div>
-          <div class="text-sm text-gray-500 uppercase tracking-wider mb-2">Certificate of Analysis</div>
-          <div class="stat-number">{stats[1].value}</div>
-          <div class="text-gray-600">{stats[1].label}</div>
+
+        <!-- Strategy 2 -->
+        <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow border-t-4 border-primary">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Risk Reduction</h3>
+          <p class="text-gray-600">
+            "Don't rely on a single manufacturer." We act as your third-party quality verification and on-ground representative in India, protecting your interests.
+          </p>
         </div>
-        
-        <!-- Shipping -->
-        <div class="flex flex-col items-center justify-center text-center bg-white rounded-lg shadow-md p-8">
-          <div class="text-6xl mb-4">🚢</div>
-          <div class="text-sm text-gray-500 uppercase tracking-wider mb-2">Shipping Bill</div>
-          <div class="stat-number">{stats[2].value}</div>
-          <div class="text-gray-600">{stats[2].label}</div>
+
+        <!-- Strategy 3 -->
+        <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow border-t-4 border-primary">
+          <div class="text-4xl mb-4">📉</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Smaller MOQ Flexibility</h3>
+          <p class="text-gray-600">
+            Big factories often ignore small orders. We aggregate demand to offer trial orders (1-2 MT) so you can verify quality with zero risk.
+          </p>
         </div>
+      </div>
+      
+      <div class="mt-12 bg-white rounded-xl shadow-sm border border-gray-200 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+           <h3 class="text-lg font-bold text-gray-900">The "50 MT" Track Record</h3>
+           <p class="text-gray-600 max-w-2xl">
+             We personally managed the largest Povidone Iodine export from India in 2024. This isn't just a claim—it's proof of our capability to handle complex logistics and quality requirements.
+           </p>
+        </div>
+        <a href="/about" class="btn-outline whitespace-nowrap">Read Our Story</a>
       </div>
     </div>
   </section>
