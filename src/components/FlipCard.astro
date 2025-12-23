@@ -1,0 +1,46 @@
+---
+interface Props {
+  frontIcon: string;
+  frontTitle: string;
+  backContent: string;
+}
+
+const { frontIcon, frontTitle, backContent } = Astro.props;
+---
+
+<div class="flip-card group perspective-1000">
+  <div class="flip-card-inner relative w-full h-64 transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
+    <!-- Front Side -->
+    <div class="flip-card-front absolute inset-0 bg-white border border-gray-200 rounded-xl shadow-lg backface-hidden flex flex-col items-center justify-center p-6 text-center">
+      <div class="text-5xl mb-4">{frontIcon}</div>
+      <h3 class="text-lg font-bold text-gray-900 uppercase tracking-wide">{frontTitle}</h3>
+    </div>
+    
+    <!-- Back Side -->
+    <div class="flip-card-back absolute inset-0 bg-primary text-white rounded-xl shadow-lg backface-hidden rotate-y-180 flex items-center justify-center p-6">
+      <p class="text-sm leading-relaxed text-center">{backContent}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .group:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+</style>

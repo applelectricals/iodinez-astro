@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FlipCard from '../components/FlipCard.astro';
 
 const products = [
   { name: 'Iodoquinol', slug: 'iodoquinol' },
@@ -13,10 +14,10 @@ const products = [
 ];
 
 const processSteps = [
-  { icon: '📋', title: 'INQUIRY & DOCUMENTATION', description: 'Initial consultation and documentation review including product specifications and requirements' },
-  { icon: '🔬', title: 'QUALITY TESTING', description: 'Comprehensive quality analysis and testing of products as per international standards' },
-  { icon: '📦', title: 'PACKAGING & COMPLIANCE', description: 'Safe packaging according to international shipping regulations and compliance checks' },
-  { icon: '🚢', title: 'SHIPPING & DELIVERY', description: 'Fast and secure international shipping with real-time tracking and updates' },
+  { number: '01', icon: '📋', title: 'INQUIRY & DOCUMENTATION', description: 'Initial consultation and documentation review including product specifications and requirements' },
+  { number: '02', icon: '🔬', title: 'QUALITY TESTING', description: 'Comprehensive quality analysis and testing of products as per international standards' },
+  { number: '03', icon: '📦', title: 'PACKAGING & COMPLIANCE', description: 'Safe packaging according to international shipping regulations and compliance checks' },
+  { number: '04', icon: '🚢', title: 'SHIPPING & DELIVERY', description: 'Fast and secure international shipping with real-time tracking and updates' },
 ];
 
 const stats = [
@@ -25,10 +26,43 @@ const stats = [
   { value: '90%', label: 'Cargo reached destination ON TIME' },
 ];
 
+const flipCards = [
+  {
+    frontIcon: '🏭',
+    frontTitle: 'Factory Audits / Visits',
+    backContent: 'We personally visit manufacturing facilities, verify GMP compliance, production capabilities, and quality management systems before partnering with any manufacturer.'
+  },
+  {
+    frontIcon: '🔬',
+    frontTitle: 'Third Party Lab Testing',
+    backContent: 'All shipments undergo independent laboratory testing by government-approved labs. We draw random samples and share test results with you before shipment.'
+  },
+  {
+    frontIcon: '📄',
+    frontTitle: 'Complete Documentation',
+    backContent: 'We handle all paperwork including COA, MSDS, shipping documents, buyer-seller agreements, sales orders, proformas, and purchase orders.'
+  },
+  {
+    frontIcon: '💰',
+    frontTitle: 'Zero Cost to Buyers',
+    backContent: 'Our services are completely FREE for buyers. We earn only a small commission from our manufacturer partners, protecting your interests at all phases.'
+  },
+  {
+    frontIcon: '🤝',
+    frontTitle: 'Direct Manufacturer Access',
+    backContent: 'No middlemen. We connect you directly with WHO-GMP certified manufacturers like Calibre Chemicals and Amphray Laboratories for the best prices.'
+  },
+  {
+    frontIcon: '📦',
+    frontTitle: 'End-to-End Support',
+    backContent: 'From initial inquiry to delivery at your warehouse, we manage the entire process including scheduling, inspection, packaging verification, and shipping.'
+  },
+];
+
 const faqs = [
   {
     question: 'WHAT TYPES OF SERVICES DO YOU OFFER?',
-    answer: 'We associate with you in finding manufacturers, checking their quality standards, GMP, ISO and other certifications, visit their factory and understand their quality processes, coordinate and negotiate for best terms of offer, and finalize the transactional modalities between you and the manufacturer through an Agreement. We will help you with the draft agreement, Sales Order or Proforma, Advance payment, Purchase Order. We will even schedule and monitor the execution of the order. Upon readiness, will physically inspect the products, check packaging marks, and draw samples. Samples shall be sent to an accredited Third Party laboratory in sealed covers. Test results shall be shared with you, and shall be shipped on your approval.'
+    answer: 'We associate with you in finding manufacturers, checking their quality standards, GMP, ISO and other certifications, visit their factory and understand their quality processes, coordinate and negotiate for best terms of offer, and finalize the transactional modalities between you and the manufacturer through an Agreement.'
   },
   {
     question: 'HOW ARE LAB TESTS CONDUCTED ON THE FINISHED GOODS?',
@@ -36,25 +70,12 @@ const faqs = [
   },
   {
     question: 'WHAT IS THE TYPICAL TURNAROUND TIME FOR A 20 FEET CONTAINER?',
-    answer: 'It depends on the chemical to be produced and the factory capacity and existing orders. However we always schedule and let you know before production starts. Usually it takes around 15 days to 30 days to complete the production for a 20 feet container load.'
+    answer: 'It depends on the chemical to be produced and the factory capacity. Usually it takes around 15 days to 30 days to complete the production for a 20 feet container load.'
   },
   {
     question: 'HOW MUCH DO YOUR SERVICES COST?',
-    answer: 'We do not charge the buyers as we are invested in marketing of pharma chemical products from our manufacturers. We earn a small commission from our manufacturer partners, when you opt to source through us. In return we protect your interest at all phases of the project till delivery.'
+    answer: 'We do not charge the buyers. We earn a small commission from our manufacturer partners, when you opt to source through us. In return we protect your interest at all phases of the project till delivery.'
   },
-  {
-    question: 'HAVE SPECIFIC REQUIREMENTS?',
-    answer: 'Please contact us via email, WhatsApp or phone call. We shall be glad to help you.'
-  },
-];
-
-const whyChooseUs = [
-  { icon: '🏭', title: 'Factory Verification', description: 'We personally visit and audit manufacturing facilities to ensure GMP compliance and quality standards.' },
-  { icon: '🔬', title: 'Third-Party Lab Testing', description: 'All products undergo independent laboratory testing by government-approved facilities before shipment.' },
-  { icon: '📄', title: 'Complete Documentation', description: 'COA, MSDS, shipping documents, and buyer-seller agreements - we handle all paperwork.' },
-  { icon: '💰', title: 'Zero Cost to Buyers', description: 'Our services are completely free for buyers. We work on manufacturer commission.' },
-  { icon: '🤝', title: 'Direct Manufacturer Access', description: 'No middlemen. We connect you directly with WHO-GMP certified manufacturers.' },
-  { icon: '📦', title: 'End-to-End Support', description: 'From inquiry to delivery at your warehouse - we manage the entire process.' },
 ];
 ---
 
@@ -64,14 +85,12 @@ const whyChooseUs = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
+          <p class="text-primary font-semibold uppercase tracking-wider mb-4">Export Marketing Services</p>
           <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
             IMPORT PHARMA CHEMICALS FROM INDIA
           </h1>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
             Save Months of Verification Time and Access Certified Reliable Pharma Chemical Suppliers with Our Expert-led Factory Visits
-          </p>
-          <p class="text-gray-600 mb-8">
-            Transform your pharmaceutical chemical sourcing with end-to-end support that eliminates risk and accelerates your supply chain.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/contact" class="btn-primary">Get Started</a>
@@ -82,44 +101,75 @@ const whyChooseUs = [
           <img 
             src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&h=600&fit=crop" 
             alt="Scientist in laboratory" 
-            class="rounded-lg shadow-xl w-full"
+            class="rounded-xl shadow-2xl w-full"
           />
+          <div class="absolute -bottom-6 -left-6 bg-primary text-white p-4 rounded-lg shadow-lg">
+            <div class="text-2xl font-bold">100+ MT</div>
+            <div class="text-sm opacity-90">Shipped Successfully</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
+  <!-- Stats Section with Images -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-3 gap-8">
-        {stats.map((stat) => (
-          <div class="text-center p-8 bg-white rounded-lg shadow-sm">
-            <div class="stat-number mb-2">{stat.value}</div>
-            <div class="text-gray-600">{stat.label}</div>
+        <!-- Image Grid -->
+        <div class="space-y-4">
+          <img 
+            src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=250&fit=crop" 
+            alt="Blue chemical barrels" 
+            class="rounded-lg shadow-md w-full h-40 object-cover"
+          />
+          <img 
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop" 
+            alt="Manufacturing facility" 
+            class="rounded-lg shadow-md w-full h-40 object-cover"
+          />
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="stat-number">{stats[0].value}</div>
+            <div class="text-gray-600">{stats[0].label}</div>
           </div>
-        ))}
+        </div>
+        
+        <!-- Certificate / Center -->
+        <div class="flex flex-col items-center justify-center text-center bg-white rounded-lg shadow-md p-8">
+          <div class="text-6xl mb-4">📜</div>
+          <div class="text-sm text-gray-500 uppercase tracking-wider mb-2">Certificate of Analysis</div>
+          <div class="stat-number">{stats[1].value}</div>
+          <div class="text-gray-600">{stats[1].label}</div>
+        </div>
+        
+        <!-- Shipping -->
+        <div class="flex flex-col items-center justify-center text-center bg-white rounded-lg shadow-md p-8">
+          <div class="text-6xl mb-4">🚢</div>
+          <div class="text-sm text-gray-500 uppercase tracking-wider mb-2">Shipping Bill</div>
+          <div class="stat-number">{stats[2].value}</div>
+          <div class="text-gray-600">{stats[2].label}</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Our Services -->
-  <section class="py-16 bg-white">
+  <!-- Why Choose Our Services - Flip Cards -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="section-title mb-4">WHY CHOOSE OUR SERVICES?</h2>
         <p class="section-subtitle mx-auto">
-          We provide comprehensive sourcing support that protects your interests at every step.
+          Hover over each card to learn more about how we protect your interests.
         </p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {whyChooseUs.map((item) => (
-          <div class="card">
-            <div class="text-3xl mb-4">{item.icon}</div>
-            <h3 class="font-semibold text-lg text-gray-900 mb-2">{item.title}</h3>
-            <p class="text-gray-600 text-sm">{item.description}</p>
-          </div>
+        {flipCards.map((card) => (
+          <FlipCard 
+            frontIcon={card.frontIcon}
+            frontTitle={card.frontTitle}
+            backContent={card.backContent}
+          />
         ))}
       </div>
     </div>
@@ -131,7 +181,7 @@ const whyChooseUs = [
       <div class="text-center mb-12">
         <h2 class="section-title mb-4">PRODUCTS WE DEAL</h2>
         <p class="section-subtitle mx-auto">
-          These are the major products we have exported in the past. We can also source other chemicals based on your specific requirements.
+          These are the major products we have exported. We can source other chemicals based on your requirements.
         </p>
       </div>
       
@@ -139,35 +189,34 @@ const whyChooseUs = [
         {products.map((product) => (
           <a 
             href={`/products/${product.slug}`}
-            class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-shadow border border-gray-100"
+            class="bg-white p-6 rounded-lg text-center hover:shadow-lg hover:border-primary transition-all border-2 border-transparent"
           >
-            <span class="font-medium text-gray-900 uppercase text-sm">{product.name}</span>
+            <span class="font-semibold text-gray-900 uppercase text-sm">{product.name}</span>
           </a>
         ))}
-      </div>
-      
-      <div class="text-center mt-8">
-        <p class="text-gray-600 mb-4">Just leave your email to receive Certificate of Analysis (COA) files for all products we deal.</p>
       </div>
     </div>
   </section>
 
   <!-- Export Process -->
-  <section class="py-16 bg-white">
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="section-title mb-4">OUR EXPORT PROCESS</h2>
         <p class="section-subtitle mx-auto">
-          We facilitate direct partnerships between you and manufacturers, eliminating intermediary costs.
+          We facilitate direct partnerships between you and manufacturers.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {processSteps.map((step) => (
-          <div class="text-center p-6">
-            <div class="text-4xl mb-4">{step.icon}</div>
-            <h3 class="font-bold text-sm text-gray-900 mb-3 uppercase">{step.title}</h3>
-            <p class="text-gray-600 text-sm">{step.description}</p>
+          <div class="relative text-center group">
+            <div class="text-7xl font-bold text-gray-100 absolute top-0 left-1/2 -translate-x-1/2 -z-10 group-hover:text-primary/10 transition-colors">{step.number}</div>
+            <div class="pt-8">
+              <div class="text-4xl mb-4">{step.icon}</div>
+              <h3 class="font-bold text-sm text-gray-900 mb-3 uppercase">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -175,56 +224,72 @@ const whyChooseUs = [
   </section>
 
   <!-- Exporting Now Banner -->
-  <section class="py-16 bg-primary text-white">
+  <section class="py-16 bg-gradient-to-r from-primary to-blue-700 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold mb-6">Exporting Povidone Iodine Powder RIGHT NOW</h2>
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6">Exporting Povidone Iodine Powder RIGHT NOW</h2>
           <ul class="space-y-4">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">✓</span>
+              <span class="text-green-300 text-2xl">✓</span>
               <div>
-                <strong>More than 100 MT Shipped Through Us</strong><br />
-                <span class="opacity-90">We have been continuously shipping Povidone Iodine to Central Asia region of USP grade (9-12%).</span>
+                <strong>More than 100 MT Shipped</strong><br />
+                <span class="opacity-90">Continuously shipping Povidone Iodine USP grade (9-12%) to Central Asia.</span>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">✓</span>
+              <span class="text-green-300 text-2xl">✓</span>
               <div>
                 <strong>Approved by Accredited Laboratory</strong><br />
-                <span class="opacity-90">All our exports meet USP standards and pass through inspection and laboratory tests.</span>
+                <span class="opacity-90">All exports meet USP standards and pass laboratory tests.</span>
               </div>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">✓</span>
+              <span class="text-green-300 text-2xl">✓</span>
               <div>
                 <strong>Shipped Through Challenging Routes</strong><br />
-                <span class="opacity-90">Have been shipping to customer destinations through hostile routes, overcoming challenges.</span>
+                <span class="opacity-90">Successfully shipping to customer destinations through complex logistics.</span>
               </div>
             </li>
           </ul>
+          <div class="mt-8">
+            <a href="/contact" class="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+              Request Quote Now
+            </a>
+          </div>
         </div>
-        <div class="text-center lg:text-left">
-          <a href="/contact" class="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors">
-            Start Your Order
-          </a>
+        <div class="hidden lg:block">
+          <img 
+            src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=500&h=400&fit=crop" 
+            alt="Shipping container" 
+            class="rounded-xl shadow-2xl"
+          />
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Lab Image Section -->
+  <section class="py-0">
+    <img 
+      src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1600&h=400&fit=crop" 
+      alt="Scientist working in laboratory" 
+      class="w-full h-64 lg:h-96 object-cover"
+    />
+  </section>
+
   <!-- Guide to Our Services / FAQ -->
-  <section class="py-16 bg-white">
+  <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="section-title mb-4">GUIDE TO OUR SERVICES</h2>
       <p class="text-gray-600 mb-8">
-        If you are considering to source any pharmaceutical chemicals, especially Iodine based derivatives, please give us an opportunity to serve you.
+        If you are considering to source pharmaceutical chemicals, especially Iodine based derivatives, please give us an opportunity to serve you.
       </p>
       
       <div class="divide-y divide-gray-200">
         {faqs.map((faq, index) => (
           <details class="group py-4" open={index === 0}>
-            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-gray-900">
+            <summary class="flex justify-between items-center cursor-pointer list-none font-semibold text-gray-900 hover:text-primary transition-colors">
               {faq.question}
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
