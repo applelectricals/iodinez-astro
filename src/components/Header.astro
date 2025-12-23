@@ -7,15 +7,14 @@ const navLinks = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 glass">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
-          <span class="text-xl font-bold text-white">Iz</span>
-        </div>
-        <span class="text-xl font-bold gradient-text">iodineZ</span>
+        <span class="text-2xl font-light tracking-tight">
+          <span class="text-gray-400">iodine</span><span class="text-primary font-bold">Z</span>
+        </span>
       </a>
       
       <!-- Desktop Navigation -->
@@ -23,28 +22,24 @@ const navLinks = [
         {navLinks.map((link) => (
           <a 
             href={link.href}
-            class="text-slate-300 hover:text-white font-medium transition-colors relative group"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
           >
             {link.label}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
           </a>
         ))}
       </div>
       
       <!-- CTA Button -->
       <div class="hidden md:block">
-        <a href="/contact" class="btn-primary inline-flex items-center gap-2">
+        <a href="/contact" class="btn-primary">
           Get Quote
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
         </a>
       </div>
       
       <!-- Mobile Menu Button -->
       <button 
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-slate-300 hover:text-white"
+        class="md:hidden p-2 text-gray-700"
         aria-label="Toggle menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,44 +50,28 @@ const navLinks = [
   </nav>
   
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden mobile-menu flex-col items-center justify-center gap-8">
-    <button 
-      id="mobile-menu-close"
-      class="absolute top-5 right-5 p-2 text-slate-300 hover:text-white"
-      aria-label="Close menu"
-    >
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
-    
-    {navLinks.map((link) => (
-      <a 
-        href={link.href}
-        class="text-2xl font-semibold text-slate-300 hover:text-white transition-colors"
-      >
-        {link.label}
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map((link) => (
+        <a 
+          href={link.href}
+          class="block py-2 text-gray-700 hover:text-primary font-medium"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/contact" class="btn-primary block text-center mt-4">
+        Get Quote
       </a>
-    ))}
-    
-    <a href="/contact" class="btn-primary mt-4 text-lg">
-      Get Quote
-    </a>
+    </div>
   </div>
 </header>
 
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');
-  const menuClose = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
   
   menuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('hidden');
-    mobileMenu?.classList.add('flex');
-  });
-  
-  menuClose?.addEventListener('click', () => {
-    mobileMenu?.classList.add('hidden');
-    mobileMenu?.classList.remove('flex');
+    mobileMenu?.classList.toggle('hidden');
   });
 </script>

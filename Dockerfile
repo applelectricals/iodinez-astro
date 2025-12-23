@@ -15,17 +15,19 @@ COPY . .
 # Build the Astro site
 RUN npm run build
 
-# Stage 2: Production
-FROM nginx:alpine AS runtime
+# Stage 2: Serve with lightweight http server
+FROM node:20-alpine AS runtime
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
+WORKDIR /app
 
-# Copy built static files
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Install a simple static file server
+RUN npm install -g serve
 
-# Expose port 80
-EXPOSE 80
+# Copy built files
+COPY --from=builder /app/dist ./dist
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Expose port 3000 (serve default)
+EXPOSE 3000
+
+# Start the server
+CMD ["serve", "dist", "-l", "3000"]
