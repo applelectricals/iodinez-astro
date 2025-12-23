@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const product = {
+  name: 'Iodine Prills',
+  description: 'Iodine Prills are pure elemental iodine in pellet form, used as a starting material for chemical synthesis and industrial applications. They offer ease of handling compared to flake or crystal forms.',
+  icon: '💠',
+  casNumber: '7553-56-2',
+  formula: 'I₂',
+  grade: 'Technical / Resublimed',
+  purity: '≥99.5%',
+  appearance: 'Dark violet-black spherical pellets',
+  packaging: ['25 kg fiber drums', '50 kg fiber drums', 'Special packaging'],
+  applications: [
+    { title: 'Chemical Synthesis', desc: 'Starting material for iodine compounds' },
+    { title: 'Pharmaceuticals', desc: 'API synthesis intermediates' },
+    { title: 'Industrial', desc: 'Catalysts and specialty chemicals' },
+    { title: 'Laboratory', desc: 'Research and analytical applications' },
+  ],
+  certifications: ['ISO 9001:2015'],
+};
+
+const relatedProducts = [
+  { name: 'Potassium Iodide', slug: 'potassium-iodide', icon: '⚗️' },
+  { name: 'Sodium Iodide', slug: 'sodium-iodide', icon: '💎' },
+  { name: 'Povidone Iodine', slug: 'povidone-iodine', icon: '💊' },
+];
+---
+
+<BaseLayout 
+  title={`${product.name} - iodineZ | Pure Elemental Iodine Export`}
+  description={`Buy ${product.name} from India. ${product.grade} grade with ${product.purity} purity for chemical synthesis and industrial applications.`}
+>
+  <section class="pt-24 pb-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-sm text-slate-400">
+        <a href="/" class="hover:text-primary transition-colors">Home</a><span>/</span>
+        <a href="/products" class="hover:text-primary transition-colors">Products</a><span>/</span>
+        <span class="text-white">{product.name}</span>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
+        <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <div class="text-6xl mb-6">{product.icon}</div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">{product.name}</h1>
+            <p class="text-slate-400 text-lg mb-6">{product.description}</p>
+            <div class="flex flex-wrap gap-3 mb-8">
+              {product.certifications.map((cert) => (
+                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium">✓ {cert}</span>
+              ))}
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contact" class="btn-primary">Request Quote</a>
+              <a href="https://wa.me/918335861010" target="_blank" class="btn-secondary">WhatsApp</a>
+            </div>
+          </div>
+          <div class="glass-light rounded-xl p-6">
+            <h3 class="text-lg font-semibold mb-4">Product Specifications</h3>
+            <dl class="space-y-3">
+              <div class="flex justify-between py-2 border-b border-white/10"><dt class="text-slate-400">CAS Number</dt><dd class="text-white font-mono">{product.casNumber}</dd></div>
+              <div class="flex justify-between py-2 border-b border-white/10"><dt class="text-slate-400">Formula</dt><dd class="text-white font-mono">{product.formula}</dd></div>
+              <div class="flex justify-between py-2 border-b border-white/10"><dt class="text-slate-400">Grade</dt><dd class="text-white">{product.grade}</dd></div>
+              <div class="flex justify-between py-2 border-b border-white/10"><dt class="text-slate-400">Purity</dt><dd class="text-white font-semibold text-primary">{product.purity}</dd></div>
+              <div class="flex justify-between py-2"><dt class="text-slate-400">Appearance</dt><dd class="text-white">{product.appearance}</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-8"><span class="gradient-text">Applications</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {product.applications.map((app) => (<div class="glass rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-2">{app.title}</h3><p class="text-slate-400 text-sm">{app.desc}</p></div>))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-8">Related Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {relatedProducts.map((rp) => (<a href={`/products/${rp.slug}`} class="glass rounded-xl p-6 card-hover group flex items-center gap-4"><div class="text-4xl">{rp.icon}</div><div><h3 class="font-semibold text-white group-hover:text-primary transition-colors">{rp.name}</h3><span class="text-sm text-slate-400">View Details →</span></div></a>))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Ready to Order <span class="gradient-text">{product.name}</span>?</h2>
+        <a href="/contact" class="btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

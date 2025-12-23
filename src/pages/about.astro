@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Factory Audits',
+    description: 'We visit manufacturing facilities in person to verify GMP compliance, production capabilities, and quality management systems.',
+    icon: '🏭'
+  },
+  {
+    title: 'Quality Testing',
+    description: 'All shipments undergo third-party laboratory testing by government-approved labs to ensure product specifications are met.',
+    icon: '🔬'
+  },
+  {
+    title: 'Documentation',
+    description: 'Complete support with COA, MSDS, regulatory documentation, and buyer-seller agreements.',
+    icon: '📋'
+  },
+  {
+    title: 'Logistics Management',
+    description: 'End-to-end shipping coordination with real-time tracking and customs clearance support.',
+    icon: '🚢'
+  },
+];
+
+const manufacturers = [
+  { name: 'Calibre Chemicals', certifications: ['WHO-GMP', 'ISO 9001', 'ISO 14001'] },
+  { name: 'Amphray Laboratories', certifications: ['WHO-GMP', 'CEP', 'USFDA'] },
+];
+
+const stats = [
+  { value: '100+', label: 'MT Shipped' },
+  { value: '15+', label: 'Countries' },
+  { value: '50+', label: 'MT Single Shipment' },
+  { value: '0', label: 'Cost to Buyers' },
+];
+---
+
+<BaseLayout 
+  title="About Us - iodineZ | Pharma Chemical Export from India"
+  description="Learn about iodineZ - your trusted partner for sourcing pharmaceutical chemicals from India. Expert-led factory audits, quality assurance, and seamless export services."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-16 relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          About <span class="gradient-text">iodineZ</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+          Export marketing services connecting global pharmaceutical buyers with quality-certified Indian manufacturers.
+        </p>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        {stats.map((stat) => (
+          <div class="glass rounded-xl p-6 text-center">
+            <div class="text-3xl font-bold gradient-text mb-1">{stat.value}</div>
+            <div class="text-sm text-slate-400">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="text-slate-400 mb-4">
+              iodineZ was founded with a clear mission: to bridge the gap between international pharmaceutical buyers and India's world-class chemical manufacturers.
+            </p>
+            <p class="text-slate-400 mb-4">
+              We specialize in iodine derivatives – a niche but critical category of pharmaceutical chemicals. Our deep expertise, strong manufacturer relationships, and hands-on approach have enabled us to successfully export over 100 metric tons of Povidone Iodine to Central Asia and beyond.
+            </p>
+            <p class="text-slate-400">
+              Our 50+ MT single shipment stands as the largest Povidone Iodine export from India in 2024 – a testament to our capabilities and the trust our partners place in us.
+            </p>
+          </div>
+          
+          <div class="glass-light rounded-xl p-6">
+            <h3 class="text-lg font-semibold mb-4">Why Choose Us?</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mt-0.5">✓</div>
+                <span class="text-slate-300">No cost to buyers – we work on manufacturer commission</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mt-0.5">✓</div>
+                <span class="text-slate-300">Direct manufacturer relationships – no middlemen</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mt-0.5">✓</div>
+                <span class="text-slate-300">Physical factory inspections before every shipment</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mt-0.5">✓</div>
+                <span class="text-slate-300">Third-party lab testing and quality assurance</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 mt-0.5">✓</div>
+                <span class="text-slate-300">Complete documentation and compliance support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          We handle every aspect of your pharmaceutical sourcing journey.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <div class="glass rounded-xl p-6 card-hover">
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h3 class="text-lg font-semibold text-white mb-2">{service.title}</h3>
+            <p class="text-slate-400 text-sm">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Manufacturing Partners -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Manufacturing <span class="gradient-text">Partners</span></h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          We work exclusively with WHO-GMP certified manufacturers who meet international quality standards.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {manufacturers.map((mfr) => (
+          <div class="glass rounded-xl p-6">
+            <h3 class="text-xl font-semibold text-white mb-3">{mfr.name}</h3>
+            <div class="flex flex-wrap gap-2">
+              {mfr.certifications.map((cert) => (
+                <span class="px-3 py-1 rounded-full bg-primary/20 text-primary-light text-sm">{cert}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 lg:p-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Ready to <span class="gradient-text">Partner With Us</span>?
+        </h2>
+        <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+          Let us help you source quality pharmaceutical chemicals from India. No upfront costs, complete transparency.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn-primary">Contact Us</a>
+          <a href="/products" class="btn-secondary">View Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

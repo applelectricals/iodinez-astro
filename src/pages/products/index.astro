@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const products = [
+  { 
+    name: 'Povidone Iodine', 
+    slug: 'povidone-iodine', 
+    description: 'USP grade antiseptic with 9-12% available iodine. Used in wound care, surgical preparations, and general antisepsis.',
+    applications: ['Wound care', 'Surgical scrubs', 'Disinfectants', 'Veterinary'],
+    icon: '💊',
+    featured: true
+  },
+  { 
+    name: 'Potassium Iodide', 
+    slug: 'potassium-iodide', 
+    description: 'Pharmaceutical and nutrition grade KI. Essential for thyroid health and radiation protection applications.',
+    applications: ['Pharmaceuticals', 'Nutrition supplements', 'Radiation protection', 'Chemical synthesis'],
+    icon: '⚗️',
+    featured: true
+  },
+  { 
+    name: 'Potassium Iodate', 
+    slug: 'potassium-iodate', 
+    description: 'Food fortification and industrial grade. Primarily used for salt iodization programs worldwide.',
+    applications: ['Salt iodization', 'Food fortification', 'Bread dough conditioner', 'Chemical reagent'],
+    icon: '🧪',
+    featured: false
+  },
+  { 
+    name: 'Sodium Iodide', 
+    slug: 'sodium-iodide', 
+    description: 'High purity pharmaceutical NaI. Used in medical diagnostics and thyroid treatments.',
+    applications: ['Thyroid treatments', 'Medical imaging', 'Nutrition', 'Chemical synthesis'],
+    icon: '💎',
+    featured: false
+  },
+  { 
+    name: 'Calcium Iodate', 
+    slug: 'calcium-iodate', 
+    description: 'Animal feed and nutrition grade. Provides iodine supplementation for livestock and poultry.',
+    applications: ['Animal feed', 'Poultry supplements', 'Livestock nutrition', 'Pet food'],
+    icon: '🔬',
+    featured: false
+  },
+  { 
+    name: 'Iodoquinol', 
+    slug: 'iodoquinol', 
+    description: 'Active pharmaceutical ingredient (API). Antiprotozoal drug for treating intestinal infections.',
+    applications: ['Antiprotozoal formulations', 'Intestinal infections', 'Pharmaceutical manufacturing'],
+    icon: '⚕️',
+    featured: false
+  },
+  { 
+    name: 'Clioquinol', 
+    slug: 'clioquinol', 
+    description: 'Antifungal and antibacterial API. Used in topical preparations for skin infections.',
+    applications: ['Antifungal preparations', 'Skin infections', 'Dermatological formulations'],
+    icon: '🧬',
+    featured: false
+  },
+  { 
+    name: 'Iodine Prills', 
+    slug: 'iodine-prills', 
+    description: 'Pure elemental iodine in pellet form. Used as starting material for iodine compound synthesis.',
+    applications: ['Chemical synthesis', 'Laboratory use', 'Industrial processing', 'Research'],
+    icon: '💠',
+    featured: false
+  },
+];
+---
+
+<BaseLayout 
+  title="Products - iodineZ | Iodine Derivatives & Pharma Chemicals" 
+  description="Explore our range of pharmaceutical grade iodine derivatives including Povidone Iodine, Potassium Iodide, and more. All products from WHO-GMP certified manufacturers."
+>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        Our <span class="gradient-text">Products</span>
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        Premium pharmaceutical grade iodine derivatives from WHO-GMP certified manufacturers in India.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-8">
+        <span class="gradient-text">Featured</span> Products
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        {products.filter(p => p.featured).map((product) => (
+          <a 
+            href={`/products/${product.slug}`}
+            class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"
+          >
+            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-2xl"></div>
+            <div class="relative">
+              <div class="text-5xl mb-4">{product.icon}</div>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                {product.name}
+              </h3>
+              <p class="text-slate-400 mb-4">{product.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {product.applications.slice(0, 3).map((app) => (
+                  <span class="text-xs px-3 py-1 rounded-full bg-primary/20 text-primary-light">
+                    {app}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <!-- All Products Grid -->
+      <h2 class="text-2xl font-bold mb-8">
+        All <span class="gradient-text">Products</span>
+      </h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <a 
+            href={`/products/${product.slug}`}
+            class="glass rounded-xl p-6 card-hover group"
+          >
+            <div class="text-4xl mb-4">{product.icon}</div>
+            <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+              {product.name}
+            </h3>
+            <p class="text-slate-400 text-sm line-clamp-2">{product.description}</p>
+            <div class="mt-4 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 lg:p-12 text-center">
+        <h2 class="text-2xl lg:text-3xl font-bold mb-4">
+          Need a <span class="gradient-text">Custom Product</span>?
+        </h2>
+        <p class="text-slate-400 mb-6">
+          We can source any pharmaceutical chemical from India. Contact us with your specific requirements.
+        </p>
+        <a href="/contact" class="btn-primary inline-flex items-center gap-2">
+          Request Custom Quote
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

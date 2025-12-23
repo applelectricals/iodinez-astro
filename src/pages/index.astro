@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const products = [
+  { name: 'Povidone Iodine', slug: 'povidone-iodine', description: 'USP grade antiseptic, 9-12% available iodine', icon: '💊' },
+  { name: 'Potassium Iodide', slug: 'potassium-iodide', description: 'Pharmaceutical and nutrition grade KI', icon: '⚗️' },
+  { name: 'Potassium Iodate', slug: 'potassium-iodate', description: 'Food fortification and industrial grade', icon: '🧪' },
+  { name: 'Sodium Iodide', slug: 'sodium-iodide', description: 'High purity pharmaceutical NaI', icon: '💎' },
+  { name: 'Calcium Iodate', slug: 'calcium-iodate', description: 'Animal feed and nutrition grade', icon: '🔬' },
+  { name: 'Iodoquinol', slug: 'iodoquinol', description: 'Active pharmaceutical ingredient', icon: '⚕️' },
+  { name: 'Clioquinol', slug: 'clioquinol', description: 'Antifungal and antibacterial API', icon: '🧬' },
+  { name: 'Iodine Prills', slug: 'iodine-prills', description: 'Pure elemental iodine for synthesis', icon: '💠' },
+];
+
+const processSteps = [
+  { step: '01', title: 'Inquiry & Documentation', description: 'Initial consultation, product specifications, and requirements gathering' },
+  { step: '02', title: 'Quality Testing', description: 'Comprehensive analysis and testing as per international standards' },
+  { step: '03', title: 'Packaging & Compliance', description: 'Safe packaging per shipping regulations and compliance checks' },
+  { step: '04', title: 'Shipping & Delivery', description: 'Fast, secure international shipping with real-time tracking' },
+];
+
+const certifications = [
+  { title: 'WHO-GMP', description: 'World Health Organization Good Manufacturing Practice certified', icon: '✓' },
+  { title: 'ISO 9001', description: 'Quality management systems certification', icon: '✓' },
+  { title: 'ISO 14001', description: 'Environmental management certification', icon: '✓' },
+];
+---
+
+<BaseLayout title="iodineZ - Import Pharma Chemicals from India">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float delay-200"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 animate-fade-in">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          <span class="text-sm text-slate-300">Exporting to 15+ Countries</span>
+        </div>
+        
+        <!-- Main Heading -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in delay-100">
+          Import <span class="gradient-text">Pharma Chemicals</span><br />
+          from India
+        </h1>
+        
+        <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-8 animate-fade-in delay-200">
+          Save months of verification time and access certified reliable pharma chemical suppliers with our expert-led factory visits.
+        </p>
+        
+        <!-- Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mb-10 animate-fade-in delay-300">
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">100+ MT</div>
+            <div class="text-sm text-slate-400">Povidone Iodine Shipped</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">WHO-GMP</div>
+            <div class="text-sm text-slate-400">Certified Partners</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">15+</div>
+            <div class="text-sm text-slate-400">Countries Served</div>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-400">
+          <a href="/contact" class="btn-primary inline-flex items-center justify-center gap-2 text-lg">
+            Get a Quote
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/products" class="btn-secondary inline-flex items-center justify-center gap-2 text-lg">
+            View Products
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Products We <span class="gradient-text">Deal</span></h2>
+        <p class="section-subtitle">
+          Major pharmaceutical chemicals we export. Contact us for any specific requirements.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <a 
+            href={`/products/${product.slug}`}
+            class="glass rounded-xl p-6 card-hover group"
+          >
+            <div class="text-4xl mb-4">{product.icon}</div>
+            <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+              {product.name}
+            </h3>
+            <p class="text-slate-400 text-sm">{product.description}</p>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-10">
+        <a href="/products" class="btn-secondary inline-flex items-center gap-2">
+          View All Products
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Export Process Section -->
+  <section class="py-20 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Export <span class="gradient-text">Process</span></h2>
+        <p class="section-subtitle">
+          We facilitate direct partnerships between you and manufacturers, eliminating intermediary costs.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {processSteps.map((step, index) => (
+          <div class="glass rounded-xl p-6 relative">
+            <div class="text-5xl font-bold text-primary/20 mb-4">{step.step}</div>
+            <h3 class="text-lg font-semibold text-white mb-2">{step.title}</h3>
+            <p class="text-slate-400 text-sm">{step.description}</p>
+            {index < processSteps.length - 1 && (
+              <div class="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-primary">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Story Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-3xl"></div>
+        
+        <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-primary/20 rounded-full px-4 py-2 mb-4">
+              <span class="text-primary font-semibold">Success Story</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+              Exporting Povidone Iodine<br />
+              <span class="gradient-text">RIGHT NOW</span>
+            </h2>
+            <p class="text-slate-400 mb-6">
+              We have been continuously shipping Povidone Iodine to the Central Asia region of USP grade (9-12%). Our 50+ MT shipment was the largest single Povidone Iodine export from India in 2024.
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">✓</div>
+                <span class="text-slate-300">100+ MT Povidone Iodine Shipped Through Us</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">✓</div>
+                <span class="text-slate-300">Approved by Accredited Third-Party Laboratory</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">✓</div>
+                <span class="text-slate-300">Shipped Successfully Through Challenging Routes</span>
+              </li>
+            </ul>
+            <a href="/contact" class="btn-primary inline-flex items-center gap-2">
+              Start Your Order
+            </a>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-light rounded-xl p-6 text-center">
+              <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+              <div class="text-sm text-slate-400">Metric Tons per Shipment</div>
+            </div>
+            <div class="glass-light rounded-xl p-6 text-center">
+              <div class="text-4xl font-bold gradient-text mb-2">USP</div>
+              <div class="text-sm text-slate-400">Grade Quality (9-12%)</div>
+            </div>
+            <div class="glass-light rounded-xl p-6 text-center">
+              <div class="text-4xl font-bold gradient-text mb-2">2024</div>
+              <div class="text-sm text-slate-400">Largest Single Shipment</div>
+            </div>
+            <div class="glass-light rounded-xl p-6 text-center">
+              <div class="text-4xl font-bold gradient-text mb-2">100%</div>
+              <div class="text-sm text-slate-400">Quality Tested</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title"><span class="gradient-text">Certifications</span></h2>
+        <p class="section-subtitle">
+          Our manufacturing partners maintain the highest quality standards.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {certifications.map((cert) => (
+          <div class="glass rounded-xl p-8 text-center card-hover">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">
+              {cert.icon}
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-2">{cert.title}</h3>
+            <p class="text-slate-400 text-sm">{cert.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="gradient-border rounded-2xl">
+        <div class="glass rounded-2xl p-8 lg:p-12 text-center">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+            Ready to Source <span class="gradient-text">Quality Chemicals</span>?
+          </h2>
+          <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
+            Get personalized sourcing assistance from our team. We'll help you find the right manufacturer, conduct factory audits, and ensure quality delivery.
+          </p>
+          
+          <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+            <input 
+              type="email" 
+              placeholder="Enter your business email" 
+              class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:outline-none focus:border-primary"
+            />
+            <button type="submit" class="btn-primary whitespace-nowrap">
+              Get Started
+            </button>
+          </form>
+          
+          <p class="text-slate-500 text-sm mt-4">
+            Receive Certificate of Analysis (COA) files for all products we deal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
