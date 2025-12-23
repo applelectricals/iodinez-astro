@@ -11,6 +11,8 @@ const product = {
   purity: '≥62% Iodine',
   appearance: 'White to off-white powder',
   packaging: ['25 kg bags', '50 kg bags'],
+  moq: '1 MT for trial, 6-10 MT standard',
+  leadTime: '15-30 days',
   applications: [
     { title: 'Animal Feed', desc: 'Iodine supplement for livestock' },
     { title: 'Poultry Nutrition', desc: 'Essential mineral for poultry health' },
@@ -80,6 +82,29 @@ const relatedProducts = [
       <h2 class="text-2xl font-bold mb-8"><span class="gradient-text">Applications</span></h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {product.applications.map((app) => (<div class="glass rounded-xl p-6"><h3 class="text-lg font-semibold text-white mb-2">{app.title}</h3><p class="text-slate-400 text-sm">{app.desc}</p></div>))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass rounded-xl p-8">
+        <h2 class="text-2xl font-bold mb-6"><span class="gradient-text">Packaging & Shipping</span></h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">Available Packaging</h3>
+            <ul class="space-y-3">
+              {product.packaging.map((pack) => (
+                <li class="flex items-center gap-3"><svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg><span class="text-slate-300">{pack}</span></li>
+              ))}
+            </ul>
+             <div class="mt-6 pt-6 border-t border-white/10 space-y-3">
+              <div class="flex items-center gap-3"><span class="text-slate-400 w-24">MOQ:</span><span class="text-white font-medium">{product.moq}</span></div>
+              <div class="flex items-center gap-3"><span class="text-slate-400 w-24">Lead Time:</span><span class="text-white font-medium">{product.leadTime}</span></div>
+            </div>
+          </div>
+          <div><h3 class="text-lg font-semibold text-white mb-4">Quality & Compliance</h3><div class="flex flex-wrap gap-2">{product.certifications.map((cert) => (<span class="px-3 py-1 rounded-full bg-primary/20 text-primary-light text-sm">{cert}</span>))}</div></div>
+        </div>
       </div>
     </div>
   </section>

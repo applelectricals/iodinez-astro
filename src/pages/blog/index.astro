@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: 'How to Import Povidone Iodine from India: Complete Guide',
+    excerpt: 'A comprehensive guide for international buyers on sourcing Povidone Iodine (PVP-I) from India, covering manufacturers, pricing, and quality verification.',
+    date: '2024-03-20',
+    slug: 'import-povidone-iodine-india',
+    tags: ['Sourcing Guide', 'Povidone Iodine']
+  },
+  {
+    title: 'Quality Standards for Pharmaceutical Iodine Exports',
+    excerpt: 'Understanding WHO-GMP, EP/USP pharmacopoeia standards, and necessary documentation for importing pharmaceutical chemicals.',
+    date: '2024-03-15',
+    slug: '#',
+    tags: ['Quality Assurance', 'Regulatory'],
+    comingSoon: true
+  },
+  {
+    title: 'Calcium Iodate for Animal Feed: Sourcing form India',
+    excerpt: 'Key considerations for sourcing FAMI-QS certified Calcium Iodate for animal nutrition and feed pre-mixes.',
+    date: '2024-03-10',
+    slug: '#',
+    tags: ['Animal Feed', 'Sourcing'],
+    comingSoon: true
+  }
+];
+---
+
+<BaseLayout 
+  title="Resource Center & Blog - iodineZ | Sourcing Insights"
+  description="Expert insights on sourcing iodine derivatives from India. Guides on quality assurance, import regulations, and market trends."
+>
+  <section class="pt-32 pb-16 relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+        Sourcing <span class="gradient-text">Insights</span>
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+        Expert guides and market intelligence for pharmaceutical chemical buyers.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-8">
+        {posts.map((post) => (
+          <article class="glass rounded-2xl p-8 hover:bg-white/5 transition-colors">
+            <div class="flex flex-wrap gap-2 mb-4">
+              {post.tags.map(tag => (
+                <span class="text-xs px-3 py-1 rounded-full bg-primary/20 text-primary-light font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h2 class="text-2xl font-bold mb-3">
+              <a href={post.comingSoon ? '#' : `/blog/${post.slug}`} class="text-white hover:text-primary transition-colors">
+                {post.title}
+              </a>
+            </h2>
+            <p class="text-slate-400 mb-6 leading-relaxed">
+              {post.excerpt}
+            </p>
+            <div class="flex items-center justify-between mt-auto">
+              <span class="text-sm text-slate-500">{post.date}</span>
+              {post.comingSoon ? (
+                <span class="text-sm px-3 py-1 bg-white/10 rounded-full text-slate-300">Coming Soon</span>
+              ) : (
+                <a href={`/blog/${post.slug}`} class="text-primary font-medium hover:text-primary-light inline-flex items-center gap-2">
+                  Read Guide 
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-12">
+     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="glass rounded-xl p-8 text-center bg-gradient-to-br from-gray-900 to-gray-800">
+         <h2 class="text-xl font-bold mb-4 text-white">Subscribe to Market Updates</h2>
+         <p class="text-gray-400 mb-6">Get monthly price trends and supply chain insights for Iodine Derivatives.</p>
+         <div class="max-w-md mx-auto flex gap-4">
+            <input type="email" placeholder="Enter your email" class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:border-primary" />
+            <button class="btn-primary whitespace-nowrap">Subscribe</button>
+         </div>
+       </div>
+     </div>
+  </section>
+
+</BaseLayout>

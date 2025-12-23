@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceSteps = [
+  {
+    number: '01',
+    title: 'Manufacturer Selection & Qualification',
+    description: 'We don\'t just pick suppliers from online directories. We verify their production capacity, certifications (WHO-GMP, ISO), and financial stability before recommending them.',
+    icon: '🏭'
+  },
+  {
+    number: '02',
+    title: 'Factory Audit & Assessment',
+    description: 'Our team visits the manufacturing facility to inspect infrastructure, quality control systems, and raw material sourcing protocols.',
+    icon: '📋'
+  },
+  {
+    number: '03',
+    title: 'Price Negotiation & Terms',
+    description: 'Leveraging our aggregate volume, we negotiate the best prices and favorable payment terms that an individual buyer might not get.',
+    icon: '💰'
+  },
+  {
+    number: '04',
+    title: 'Production Monitoring',
+    description: 'We stay in constant touch with the factory production manager to track progress and ensure your order is prioritized.',
+    icon: '⏱️'
+  },
+  {
+    number: '05',
+    title: 'Pre-Shipment Inspection',
+    description: 'Before goods leave the factory, we physically inspect packaging, labeling, and gross/net weights to ensure compliance with your order.',
+    icon: '📦'
+  },
+  {
+    number: '06',
+    title: 'Third-Party Lab Testing',
+    description: 'We draw random samples and send them to government-accredited independent laboratories. Shipment is approved only after the COA matches your specs.',
+    icon: '🔬'
+  },
+  {
+    number: '07',
+    title: 'Shipping & Documentation',
+    description: 'We handle all export documentation including Invoice, Packing List, Certificate of Origin, Insurance, and Bill of Lading.',
+    icon: '📄'
+  },
+  {
+    number: '08',
+    title: 'Delivery Coordination',
+    description: 'Whether CIF, FOB, or DDP, we coordinate with freight forwarders to track your shipment until it reaches your destination port.',
+    icon: '🚢'
+  }
+];
+---
+
+<BaseLayout title="Services - End-to-End Export Sourcing & Quality Assurance | iodineZ" description="Our 8-step quality assurance and export management process for pharmaceutical chemicals from India.">
+  
+  <!-- Hero Section -->
+  <section class="bg-gray-50 pt-32 pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        End-to-End Export Sourcing & Quality Assurance
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        We bridge the gap between international buyers and Indian manufacturers with a rigorous, transparent, and hands-on process.
+      </p>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-12">
+        {serviceSteps.map((step, index) => (
+          <div class={`flex flex-col md:flex-row gap-8 items-start ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+             <div class="flex-shrink-0 w-full md:w-1/3 flex justify-center">
+                <div class="relative w-32 h-32 md:w-48 md:h-48 bg-primary/5 rounded-full flex items-center justify-center">
+                   <div class="text-6xl md:text-7xl">{step.icon}</div>
+                   <div class="absolute -top-2 -right-2 w-10 h-10 md:w-12 md:h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg md:text-xl border-4 border-white">
+                     {step.number}
+                   </div>
+                </div>
+             </div>
+             <div class="w-full md:w-2/3 pt-4">
+               <h3 class="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+               <p class="text-lg text-gray-600 leading-relaxed">{step.description}</p>
+             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6">Ready to Source with Confidence?</h2>
+      <p class="text-xl opacity-90 mb-8">Let us handle the complexities of sourcing while you focus on your business.</p>
+      <a href="/contact" class="inline-block bg-white text-primary font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+        Discuss Your Requirements
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

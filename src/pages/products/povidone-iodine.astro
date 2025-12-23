@@ -12,13 +12,15 @@ const product = {
   appearance: 'Yellow-brown powder',
   solubility: 'Freely soluble in water and ethanol',
   packaging: ['25 kg fiber drums', '50 kg fiber drums', 'Custom packaging available'],
+  moq: '1 MT for trial, 6-10 MT standard',
+  leadTime: '15-30 days',
   applications: [
     { title: 'Wound Care', desc: 'Antiseptic solutions for wound cleaning and disinfection' },
     { title: 'Surgical Preparations', desc: 'Pre-operative skin preparation and surgical scrubs' },
     { title: 'Oral Hygiene', desc: 'Mouthwash and gargle formulations' },
     { title: 'Veterinary', desc: 'Animal wound care and teat dips for dairy' },
   ],
-  certifications: ['WHO-GMP', 'ISO 9001:2015', 'ISO 14001:2015', 'CEP (Certificate of Suitability)'],
+  certifications: ['WHO-GMP', 'ISO 9001:2015', 'FAMI-QS', 'CEP', 'Halal'],
   manufacturers: ['Calibre Chemicals', 'Amphray Laboratories'],
 };
 
@@ -151,6 +153,14 @@ const relatedProducts = [
                 <span class="text-slate-300">{pack}</span>
               </li>
             ))}
+            <li class="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
+              <span class="text-slate-400 w-24">MOQ:</span>
+              <span class="text-white font-medium">{product.moq}</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-slate-400 w-24">Lead Time:</span>
+              <span class="text-white font-medium">{product.leadTime}</span>
+            </li>
           </ul>
         </div>
         
