@@ -33,6 +33,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Feed Grade Export`}
   description={`Buy ${product.name} from certified manufacturers in India. ${product.grade} with ${product.purity} for animal nutrition.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Calcium Iodate",
+        "image": "https://iodinez.com/images/products/calcium-iodate.jpg",
+        "description": "Calcium Iodate is a stable iodine source primarily used in animal feed and nutrition. It provides essential iodine supplementation for livestock, poultry, and companion animals.",
+        "sku": "7789-80-2",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/calcium-iodate",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">

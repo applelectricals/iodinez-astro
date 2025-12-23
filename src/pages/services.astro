@@ -54,6 +54,48 @@ const serviceSteps = [
 ---
 
 <BaseLayout title="Services - End-to-End Export Sourcing & Quality Assurance | iodineZ" description="Our 8-step quality assurance and export management process for pharmaceutical chemicals from India.">
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Pharmaceutical Sourcing & Export Management",
+        "provider": {
+          "@type": "Organization",
+          "name": "iodinez",
+          "url": "https://iodinez.com"
+        },
+        "areaServed": "Global",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Export Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Factory Audits"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Third-Party Lab Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Logistics Coordination"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+  </fragment>
   
   <!-- Hero Section -->
   <section class="bg-gray-50 pt-32 pb-16">

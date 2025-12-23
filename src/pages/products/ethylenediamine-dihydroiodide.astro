@@ -18,6 +18,9 @@ const productSchema = {
   title="Ethylenediamine Dihydroiodide (EDDI) Export from India | iodineZ"
   description="Source high-purity Ethylenediamine Dihydroiodide (EDDI) from India. WHO-GMP certified, FAMI-QS approved for animal feed and veterinary applications."
 >
+  <fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  </fragment>
   <!-- Breadcrumbs -->
   <div class="bg-gray-50 py-4 border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -159,5 +162,5 @@ const productSchema = {
     </div>
   </section>
 
-  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+
 </BaseLayout>

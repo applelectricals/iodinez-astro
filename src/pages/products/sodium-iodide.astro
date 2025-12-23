@@ -33,6 +33,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Pharmaceutical Grade Export`}
   description={`Buy ${product.name} from WHO-GMP certified manufacturers in India. ${product.grade} grade for pharmaceuticals and medical diagnostics.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Sodium Iodide",
+        "image": "https://iodinez.com/images/products/sodium-iodide.jpg",
+        "description": "Sodium Iodide (NaI) is a water-soluble ionic compound used in pharmaceuticals, medical diagnostics, and nutrition supplements. It is widely used for thyroid treatments and as a source of iodine in various formulations.",
+        "sku": "7681-82-5",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/sodium-iodide",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">

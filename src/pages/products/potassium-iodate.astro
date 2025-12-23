@@ -34,6 +34,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Food Grade Export from India`}
   description={`Buy ${product.name} from certified manufacturers in India. ${product.grade} grade with ${product.purity} purity for salt iodization and food fortification.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Potassium Iodate",
+        "image": "https://iodinez.com/images/products/potassium-iodate.jpg",
+        "description": "Potassium Iodate (KIO₃) is a stable iodine compound primarily used for salt iodization programs worldwide. It is preferred in tropical climates due to its greater stability compared to potassium iodide.",
+        "sku": "7758-05-6",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/potassium-iodate",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">

@@ -35,6 +35,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Pharmaceutical Grade Export from India`}
   description={`Buy ${product.name} from WHO-GMP certified manufacturers in India. ${product.grade} grade with ${product.availableIodine} available iodine. Direct factory sourcing with quality assurance.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Povidone Iodine",
+        "image": "https://iodinez.com/images/products/povidone-iodine.jpg",
+        "description": "Povidone-Iodine (PVP-I) is a water-soluble complex of povidone and iodine, widely used as an antiseptic in healthcare settings. It releases free iodine when in contact with skin and tissues, providing broad-spectrum antimicrobial activity.",
+        "sku": "25655-41-8",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/povidone-iodine",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <!-- Breadcrumb -->
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

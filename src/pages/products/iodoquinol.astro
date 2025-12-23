@@ -31,6 +31,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Pharmaceutical API Export`}
   description={`Buy ${product.name} API from WHO-GMP certified manufacturers in India. ${product.grade} grade for pharmaceutical formulations.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Iodoquinol",
+        "image": "https://iodinez.com/images/products/iodoquinol.jpg",
+        "description": "Iodoquinol (Diiodohydroxyquin) is an antiprotozoal drug used to treat intestinal infections such as amoebiasis. It is an active pharmaceutical ingredient (API) for formulation of oral dosage forms.",
+        "sku": "83-73-8",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Amphray Laboratories"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/iodoquinol",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">

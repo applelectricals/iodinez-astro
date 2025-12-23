@@ -33,6 +33,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Pure Elemental Iodine Export`}
   description={`Buy ${product.name} from India. ${product.grade} grade with ${product.purity} purity for chemical synthesis and industrial applications.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Iodine Prills",
+        "image": "https://iodinez.com/images/products/iodine-prills.jpg",
+        "description": "Iodine Prills are pure elemental iodine in pellet form, used as a starting material for chemical synthesis and industrial applications. They offer ease of handling compared to flake or crystal forms.",
+        "sku": "7553-56-2",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/iodine-prills",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">

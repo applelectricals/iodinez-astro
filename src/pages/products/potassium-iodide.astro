@@ -35,6 +35,33 @@ const relatedProducts = [
   title={`${product.name} - iodineZ | Pharmaceutical Grade Export from India`}
   description={`Buy ${product.name} from WHO-GMP certified manufacturers in India. ${product.grade} grade with ${product.purity} purity. Direct factory sourcing with quality assurance.`}
 >
+  <fragment slot="head">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Potassium Iodide",
+        "image": "https://iodinez.com/images/products/potassium-iodide.jpg",
+        "description": "Potassium Iodide is a chemical compound, medication, and dietary supplement. As a medication it is used to treat hyperthyroidism, in radiation emergencies, and to protect the thyroid gland when certain types of radiopharmaceuticals are used.",
+        "sku": "7681-11-0",
+        "brand": {
+          "@type": "Brand",
+          "name": "iodineZ"
+        },
+        "manufacturer": {
+           "@type": "Organization",
+           "name": "Calibre Chemicals"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://iodinez.com/products/potassium-iodide",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "price": "0" 
+        }
+      }
+    </script>
+  </fragment>
   <section class="pt-24 pb-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center gap-2 text-sm text-slate-400">
